@@ -1,0 +1,15 @@
+{
+  "name": "front-camp",
+  "version": "1.0.0",
+  "description": "educational project ",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruslan Saifutdinov",
+  "license": "ISC"
+}
