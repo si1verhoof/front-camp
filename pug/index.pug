@@ -5,33 +5,27 @@ head
     <meta charset="utf8">
     title
     -
-        var links =["./css/reset.css", "./css/fonts.css", "./css/grid.css", "./css/style.css"]
+        var links =["../css/reset.css", "../css/fonts.css", "./css/style.css"]
     each item in links 
         link(rel="stylesheet", href=item)
 
 body
-    section.b-header
+    header.main-header
         .container
-            .row
-                .col-xs-6
-                    .b-header__logo.b-logo
-                    .b-header__title Курьерская служба доставки
-                .col-xs-3.col-xs-offset-1
-                    .b-header__phone 8 (909) 023-12-51
-                .col-xs-2
-                    button.b-header__button.b-button Вход
-    section.b-slider
-        .container.b-slide
-            .row
-                .col-xs-7
-                    h2.b-slide__title Срочная доставка день в день
-                    h3.b-slide__text Для тех, кто не может ждать у нас есть услуга срочной курьерской доставки корреспондеции и других видов отправлений.
-            .row
-                .col-xs-4
-                    button.b-slide__button.b-button.b-button--primary
-            .b-slide__image
-        .b-slider__dots.b-slider__dot--selected
-        .b-slider__dot
+            section.b-header
+                .b-header__logo.b-logo
+                .b-header__title Курьерская служба доставки
+                .b-header__phone 8 (909) 023-12-51
+                button.b-header__button.b-button Вход
+            section.b-slider
+                .b-slide
+                    .b-slide__text-content
+                        h2.b-slide__title Срочная доставка день в день
+                        h3.b-slide__text Для тех, кто не может ждать у нас есть услуга срочной курьерской доставки корреспондеции и других видов отправлений.
+                        button.b-slide__button.b-button.b-button--primary
+                    .b-slide__image-content
+                .b-slider__dots.b-slider__dot--selected
+                .b-slider__dot
     section.b-info
         h3.b-info__header 5 шагов к заявке
         .b-info__steps
@@ -68,24 +62,20 @@ body
                         .b-steps__step-text #{item.text}
     section.b-footer
         .container
-            .row
-                .col-xs-3
-                    .b-footer__logo.b-logo
-                .col-xs-6
-                    nav.b-footer__menu-item
-                        -
-                            var footerLinks = ["О комании", "Доставка из Китая", "Вакансии", "Все услуги", "Клиенту", "Акции", "Франчайзинг"];
-                        each item in footerLinks
-                            a.b-footer__menu-item(href="#") #{item}
-                .col-xs-3
-                    .b-footer__address
-                        | manager@uexpress.ru
-                        <br>
-                        <br> 115221, г. Челябинск,
-                        <br> ул. Северная, д. 29-в
-                        <br>
-                        <br> Мы работаем по 24 часа
-                        <br> 5 дней в неделю
+            .b-footer__logo.b-logo
+            nav.b-footer__menu-item
+                -
+                    var footerLinks = ["О комании", "Доставка из Китая", "Вакансии", "Все услуги", "Клиенту", "Акции", "Франчайзинг"];
+                each item in footerLinks
+                    a.b-footer__menu-item(href="#") #{item}
+            .b-footer__address
+                | manager@uexpress.ru
+                <br>
+                <br> 115221, г. Челябинск,
+                <br> ул. Северная, д. 29-в
+                <br>
+                <br> Мы работаем по 24 часа
+                <br> 5 дней в неделю
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(type="text/javascript" src="./js/scripts.js")
                     

@@ -1,0 +1,218 @@
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 960px;
+      margin: 0 auto;
+    }
+  }
+
+$color-black: #000000;
+$color-royalBlue: #2b5276;
+$color-waterBlue: #a9c5e0;
+$color-yellow: #e5e31f;
+$color-lightenYellow: #edec64;
+$color-white: #fff;
+$color-teal: #12628C;
+$color-darkBlue: #042A43;
+$color-anotherDarkBlue: #1b3349;
+
+body {
+    background: $color-royalBlue;
+    font-size: 13px;
+    font-family: ProximaNova, Arial;
+    margin: 0;
+}
+
+.l-content {
+    max-width: 940px;
+    margin: auto;
+}
+
+.b-logo {
+    width: 124px;
+    height: 18px;
+    background: url('../images/logo.png') no-repeat center;
+    margin-left: 3px;
+}
+
+.main-header {
+    padding-top: 35px;
+    background-color: transparent;
+    background-image: radial-gradient(at bottom, $color-teal, $color-darkBlue);
+}
+
+.b-header {
+    color: $color-waterBlue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    &__logo {
+       height: 48px; 
+    }
+
+    &__title {
+        margin-right: 200px;
+        letter-spacing: 1px;
+        line-height: 50px;
+
+        &::before {
+            content: '|';
+            display: inline-block;
+            margin-right: 29px;
+        }
+    }
+
+    &__phone {
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 50px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: url('../images/phone.png') no-repeat center;
+            margin-right: 11px;
+            vertical-align: middle;
+        }
+    }
+
+    &__button {
+        width: 140px;
+    }
+}
+
+.b-button {
+    color: $color-yellow;
+    border: 1px solid $color-yellow;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 41px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-royalBlue;
+        background-color: $color-yellow;
+    }
+
+    &--primary {
+        color: $color-royalBlue;
+        background-color: $color-yellow;
+        border: none;
+        line-height: 52px;
+        font-size: 19px;
+
+        &:hover {
+            background-color: $color-lightenYellow;
+        }
+    }
+}
+
+/*****************/
+/*    SLIDER     */
+/*****************/
+
+.b-slider {
+    height: calc(634px + 85px);
+    color: $color-white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: visible;
+}
+
+.b-slide {
+    position: relative;
+    height: 100%;
+
+    &__text-content {
+        width: 65%;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-size: 58px;
+        font-weight: 700;
+        line-height: 54px;
+        margin-bottom: 33px;
+        margin-top: calc(185px + 85px);
+        letter-spacing: 1.7px;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 58px;
+        letter-spacing: 0.4px;
+    }
+
+    &__button {
+        display: block;
+        width: 241px;
+    }
+
+    &__image-content {
+        position: absolute;
+        top: 0px;
+        left: 65%;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-image: url('../images/slide-1.png');
+        background-position: top left;
+        box-sizing: content-box;
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: 37px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    &__dot {
+        position: relative;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 5px;
+        background-color: $color-anotherDarkBlue;
+        cursor: pointer;
+
+        &--selected::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            left: 2px;
+            border-radius: 3px;
+            background-color: $color-teal;
+        }
+
+        &+.b-slider__dot {
+            margin-left: 16px;
+        }
+    }
+
+
+}

@@ -1,8 +1,10 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 var pug = require('gulp-pug');
-let cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+var csso = require('gulp-csso');
+
 
 gulp.task('clean', function (cb) {
   return gulp.src('build/', { allowEmpty: true, read: false })
@@ -10,8 +12,14 @@ gulp.task('clean', function (cb) {
 });
  
 gulp.task('sass', function () {
-  return gulp.src('sass/**/*.scss')
+  return gulp.src('scss/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(csso())
+        .pipe(gulp.dest('build/css/minStyle.css'))
     .pipe(gulp.dest('build/css'));
 });
 
@@ -20,11 +28,15 @@ gulp.task('html', function(){
     .pipe(pug())
     .pipe(gulp.dest('build/'))
 });
- 
-gulp.task('minify-css', () => {
-  return gulp.src('css/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('build/css'));
+
+gulp.task('transJs', function(){
+  return gulp.src('js/*.js')
+    .pipe(gulp.dest('build/js'))
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('html', 'minify-css', 'sass')));
+gulp.task('transImg', function(){
+  return gulp.src('images/*.png')
+    .pipe(gulp.dest('build/images'))
+});
+
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'sass', 'transJs', 'transImg')));
