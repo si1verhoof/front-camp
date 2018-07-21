@@ -17,7 +17,7 @@
     }
   }
 
-$color-black: #000000;
+$color-black: #202020;
 $color-royalBlue: #2b5276;
 $color-waterBlue: #a9c5e0;
 $color-yellow: #e5e31f;
@@ -26,6 +26,9 @@ $color-white: #fff;
 $color-teal: #12628C;
 $color-darkBlue: #042A43;
 $color-anotherDarkBlue: #1b3349;
+$color-darkRoyalBlue: #2a496b;
+
+
 
 body {
     background: $color-royalBlue;
@@ -168,7 +171,7 @@ body {
         width: 241px;
     }
 
-    &__image-content {
+    &__image {
         position: absolute;
         top: 0px;
         left: 65%;
@@ -216,3 +219,84 @@ body {
 
 
 }
+
+/*****************/
+
+/*    /SLIDER    */
+
+/*****************/
+
+.b-info {
+    position: relative;
+    background: $color-white;
+
+    &__header {
+        color: $color-darkRoyalBlue;
+        font-size: 30px;
+        text-align: center;
+        padding: 90px 0 100px;
+    }
+
+    &__steps {
+        padding-bottom: 68px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+        &__step {
+            text-align: center;
+            color: $color-black;
+            margin-bottom: 61px;
+        
+    }
+}
+
+.b-info__step--1 .b-info__step-img {
+    background-image: url('../images/step1.png');
+    background-position: center 15px;
+}
+
+.b-info__step--2 .b-info__step-img {
+    background-image: url('../images/step2.png');
+    background-position: center 13px;
+}
+
+.b-info__step--3 .b-info__step-img {
+    background-image: url('../images/step3.png');
+    background-position: center 4px;
+}
+
+.b-info__step--4 .b-info__step-img {
+    background-image: url('../images/step4.png');
+    background-position: center 10px;
+}
+
+.b-info__step--5 .b-info__step-img {
+    background-image: url('../images/step5.png');
+    background-position: center 6px;
+}
+
+.b-steps__step-title {
+    font-size: 20px;
+    margin-bottom: 19px;
+    font-weight: 500;
+    width: 33.33%;
+    justify-content: space-around
+}
+
+.b-steps__step-text {
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.b-info__step-img {
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+/* footer */
+
